@@ -4,6 +4,8 @@ import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import fr.fewerelk.simpleadminarea.commands.exceptions.ConsoleError;
+
 
 public class SAACreate implements CommandExecutor {
 
@@ -12,7 +14,8 @@ public class SAACreate implements CommandExecutor {
             //next
             return true;
         } else {
-            Bukkit.getLogger().warning(ChatColor.RED + "ACCES DENIED : you must be a player to use this command.");
+            ConsoleError error = new ConsoleError();
+            error.consoleError();
             return false;
         }
     }

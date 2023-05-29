@@ -7,3 +7,13 @@ api-version: 1.19
 commands:
   saa:
     description: Show help for SAA.
+    usage: /saa
+    permission: saa.help
+  saa create:
+    description: Create a new area.
+    usage: /saa create <area>
+    permission: saa.create
+  saa pos1:
+    description: Set the pos1 of the selected area to your position.
+    usage: /saa pos1 <area>
+    permission: saa.pos1
