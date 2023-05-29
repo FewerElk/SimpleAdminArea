@@ -1,0 +1,9 @@
+name: SimpleAdminArea
+main: fr.fewerelk.simpleadminarea.saa
+author: fewerelk
+version: 1.0
+dependecies: #none
+api-version: 1.19
+commands:
+  saa:
+    description: Show help for SAA.
