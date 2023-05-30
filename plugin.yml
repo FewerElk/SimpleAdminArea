@@ -17,3 +17,7 @@ commands:
     description: Set the pos1 of the selected area to your position.
     usage: /saa pos1 <area>
     permission: saa.pos1
+  saa pos2:
+    description: Set the pos2 of the selected area to your position.
+    usage: /saa pos2 <area>
+    permission: saa.pos2

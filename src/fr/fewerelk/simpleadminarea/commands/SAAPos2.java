@@ -13,10 +13,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 
-public class SAAPos1 implements CommandExecutor {
+public class SAAPos2 implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if ((sender instanceof Player) && (sender.hasPermission("saa.pos1"))) {
+        if ((sender instanceof Player) && (sender.hasPermission("saa.pos2"))) {
             String path = "plugin/SAA/";
 
             Location pos = Bukkit.getPlayer(sender.getName()).getLocation();
@@ -24,7 +24,7 @@ public class SAAPos1 implements CommandExecutor {
             File areafile = new File(path + args[0]);
             try {
                 PrintStream out = new PrintStream(areafile);
-                out.println("1");
+                out.println("2");
                 out.println(pos.getWorld());
                 out.println(pos.getX());
                 out.println(pos.getY());
