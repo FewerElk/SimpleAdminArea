@@ -21,7 +21,7 @@ public class SAAPos1 implements CommandExecutor {
 
             Location pos = Bukkit.getPlayer(sender.getName()).getLocation();
 
-            File areafile = new File(path + args[0]);
+            File areafile = new File(path + args[1]);
             try {
                 PrintStream out = new PrintStream(areafile);
                 out.println("1");

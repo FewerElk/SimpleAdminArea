@@ -1,23 +1,11 @@
 name: SimpleAdminArea
-main: fr.fewerelk.simpleadminarea.saa
+main: fr.fewerelk.simpleadminarea.SAA
 author: fewerelk
 version: 1.0
 dependecies: #none
 api-version: 1.19
 commands:
   saa:
-    description: Show help for SAA.
+    description: All commands of SAA.
     usage: /saa
-    permission: saa.help
-  saa create:
-    description: Create a new area.
-    usage: /saa create <area>
-    permission: saa.create
-  saa pos1:
-    description: Set the pos1 of the selected area to your position.
-    usage: /saa pos1 <area>
-    permission: saa.pos1
-  saa pos2:
-    description: Set the pos2 of the selected area to your position.
-    usage: /saa pos2 <area>
-    permission: saa.pos2
+    permission: saa.saa

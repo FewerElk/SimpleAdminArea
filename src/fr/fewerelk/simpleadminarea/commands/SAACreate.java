@@ -19,7 +19,7 @@ public class SAACreate implements CommandExecutor {
         if ((sender instanceof Player) && (sender.hasPermission("saa.create"))) {
             String path = "plugins/SAA/";
 
-            File areafile = new File(path + args[0]);
+            File areafile = new File(path + args[1]);
             try {
                 areafile.createNewFile();
             } catch (IOException e) {
@@ -28,7 +28,7 @@ public class SAACreate implements CommandExecutor {
             
             try {
                 PrintStream out = new PrintStream(areafile);
-                out.println(args[0]);
+                out.println(args[1]);
                 out.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
