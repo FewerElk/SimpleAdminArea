@@ -1,18 +1,19 @@
 package fr.fewerelk.simpleadminarea.commands;
 
 import org.bukkit.command.*;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.bukkit.Bukkit;
 
 import fr.fewerelk.simpleadminarea.commands.exceptions.*;
 
 
 public class SAAcommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (sender instanceof Player) {
+        if ((sender instanceof Player) && (Bukkit.getPlayer(sender.getName()).hasPermission("saa.saa"))) {
             if (args.length == 0) {
-                sender.sendMessage(ChatColor.GREEN + "---SAA HELP---\n/saa create <area> : create a new area.");
+                sender.sendMessage(ChatColor.GREEN + "---SAA HELP---\n/saa create <area> : create a new area.\n" + 
+                "/saa pos1 <arena>\n/saa pos2 <arena>");
                 return true;
             } else {
                 switch (args[0]) {
@@ -32,9 +33,15 @@ public class SAAcommand implements CommandExecutor {
                 }
             }
         } else {
-            ConsoleError error = new ConsoleError();
-            error.consoleError();
-            return false;
+            if (sender instanceof Player) {
+                PermError error = new PermError();
+                error.permerror(Bukkit.getPlayer(sender.getName()));
+                return false;
+            } else {
+                ConsoleError error = new ConsoleError();
+                error.consoleError();
+                return false;
+            }
         }
     }
 }
